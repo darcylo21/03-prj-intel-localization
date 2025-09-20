@@ -1,0 +1,319 @@
+/* Import Barlow Condensed font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&display=swap');
+
+/* Add your CSS here */
+body {
+  font-family: 'Barlow Condensed', Arial, sans-serif;
+  background-color: #eef7ff;
+  color: #e6eef1;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styling header/hero */
+header {
+  background: linear-gradient(to bottom, #4a81e6, #163266);
+  padding: 50px 350px;
+  text-align: center;
+  position: relative; /* Needed for overlay positioning */
+}
+
+header h1 {
+  font-family: 'Barlow Condensed', Arial, sans-serif;
+  font-size: 3.5em; /* Increased from 3em */
+  font-weight: bold;
+  margin: 25px 0px 60px 0px;
+}
+ header p {
+  font-size: 1.5em;
+}
+
+/* adjusting the intel logo*/
+header img {
+  width: 100px; /* Set the width */
+  height: auto; /* Keep the aspect ratio */
+}
+
+
+.timeline-card p {
+  /* Make the subheading an overlay */
+  position: absolute; /* Take out of normal flow */
+  left: 0;
+  top: 0; /* Position below the heading */
+  width: 100%;
+  height: 100%;
+  background: rgba(22, 50, 102, 0.92); /* Dark background with some transparency */
+  color: #e6eef1;
+  display: flex;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0;
+  text-align: left;
+  opacity: 0; /* Hide by default */
+  transition: opacity 0.3s;
+}
+
+/* Show the overlay when hovering over the card */
+.timeline-card:hover p {
+  opacity: 1;
+}
+
+/* styling cards */
+.timeline-card {
+  background: #5275b8;
+  flex: 0 0 300px;        /* fixed new card width */
+  height: 290px;          /* adjust height if you want */
+  padding: 15px;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;       /* keeps big content from breaking layout */
+  transition: transform 0.2s, box-shadow 0.2s; /* Add transition for smooth transform and shadow */
+  border-radius: 5px; /* Rounded corners for the card */
+}
+
+.timeline-card img {
+  width: 100%;           /* Make image fill the card's width */
+  height: 150px;         /* Set a fixed height to make it square-ish */
+  object-fit: cover;     /* Crop image to fill the area without stretching */
+  display: block;
+  margin-bottom: 15px;
+  border-radius: 5px; /* Rounded corners for the image */
+}
+
+.timeline-card h2,
+.timeline-card h3,
+.timeline-card p {
+  font-family: 'Barlow Condensed', Arial, sans-serif;
+}
+
+.timeline-card h2 {
+  font-size: 2em; /* Increased from 1.5em */
+  font-weight: bold;
+  margin: 10px 0px;
+}
+
+.timeline-card h3 {
+  font-size: 1.5em; /* Increased from 1.1em */
+  font-weight: bold;
+  margin: 15px 0px;
+}
+
+.timeline-card p {
+  font-size: 1.15em; /* Slightly larger for readability */
+}
+
+/* Add scale and shadow on hover for a dynamic effect */
+.timeline-card:hover {
+  transform: scale(1.05); /* Slightly enlarge the card */
+  box-shadow: 0 8px 24px rgba(22, 50, 102, 0.25); /* Add a soft shadow */
+}
+
+.timeline {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 20px; /* space between cards */
+
+  /* Use max-width so section doesn't force extra space */
+  max-width: calc(4 * 300px + 3 * 20px);
+  /* 4 cards (300px each) + 3 gaps (20px) */
+
+  padding: 20px 0 20px 20px; /* Add left padding for first card */
+  margin: 0 auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+
+  /* Enable horizontal scroll snapping */
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  /* Add right padding so last card can snap fully into view */
+  padding-right: 20px;
+}
+
+/* Make each card snap to the start of the scroll area */
+.timeline-card {
+  scroll-snap-align: start;
+}
+
+.overlay {
+  display: none;
+}
+
+/* Style for the instruction paragraph at the bottom */
+body > p {
+  text-align: center;
+  color: #092352;
+  font-size: 1.3em; /* Increased from 1.1em */
+  padding: 12px 0;
+  margin: 20px;
+  font-weight: bold;
+}
+
+
+.content-section {
+  margin: 60px 20px; /* 60px top/bottom, 20px left/right */
+  max-width: 1500px;  /* Optional: limit width on large screens */
+}
+.content-section h2{
+  color: #0f3c8f;
+  font-weight: bold;
+  font-size: 1.7em; /* Increased from 1.3em */
+}
+
+.content-section h2 i {
+  color: #4a81e6;
+}
+
+.content-section p{
+  color: #092352;
+  font-size: 1.2em; /* Increased from 1.1em */
+}
+
+.content-section a {
+  color: #0f3c8f;
+  font-weight: bold;
+  font-size: 1.2em; /* Increased from 1.1em */
+}
+/* Add vertical spacing for stacked columns */
+.content-section .row > .col-12 {
+  margin: 40px 0;  /* space between stacked columns */
+}
+
+.subscription-form h2 {
+  text-align: center;
+  font-size: 2.5em; /* Increased from 2em */
+  margin: 20px;
+  color: #0f3c8f;
+  font-weight: bold;
+}
+
+
+form {
+  margin: 20px 0;
+  padding: 10px 200px;
+  color:  #0f3c8f;
+  font-size: 1.4em;
+}
+
+.form-text {
+  font-size: 0.8em;
+  margin-bottom: 15px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  font-size: 1.15em; /* Slightly larger labels */
+}
+
+/* Make checkbox bigger */
+.subscription-form .form-check-input {
+  transform: scale(1.7);   /* 1.5 times bigger than normal */
+  margin-right: 10px;      /* keep space between checkbox and label */
+}
+
+/* Make label text smaller */
+.subscription-form .form-check-label {
+  font-size: 0.8em;        /* smaller text */
+  font-weight: normal;
+}
+
+.subscription-form button {
+  background-color: #4a81e6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px; /* Rounded corners for the button */
+}
+
+.custom-footer {
+  background-color: #163266;
+  color: #e6eef1;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 1em;
+}
+
+.custom-footer-link {
+  color: #e6eef1 !important;
+  padding: 16px 16px;
+}
+
+.custom-footer-link:hover, .custom-footer-link:focus {
+  color: #81a0d8 !important;
+  text-decoration: underline;
+}
+
+.custom-footer p {
+  margin-top: 20px;
+  font-size: 0.9em;
+}
+/* Responsive styles */
+@media screen and (max-width: 1300px) {
+   header {
+    padding: 50px 100px;      /* Less padding for header */
+  }
+  
+  .timeline {
+    max-width: calc(3 * 250px + 2 * 20px);     
+    padding-left: 10px;      /* Smaller padding on small screens */
+    padding-right: 10px;
+    gap: 20px;               /* Less gap between cards */
+  }
+  .timeline-card {
+    flex: 0 0 250px;         /* Make cards narrower */
+    height: 250px;           /* Make cards shorter */
+    padding: 10px;
+  }
+  .timeline-card img {
+    height: 120px;            /* Smaller image */
+    margin-bottom: 8px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .timeline {
+    display: flex;
+    flex-direction: column;     /* Stack cards vertically */
+    flex-wrap: nowrap;
+    align-items: center;        /* Center cards horizontally */
+    justify-content: flex-start;
+    overflow-x: hidden;         /* No horizontal scroll */
+    overflow-y: auto;           /* Enable vertical scroll */
+    max-width: 100vw;
+    gap: 20px;
+    padding: 10px 0;
+  }
+  .timeline-card {
+    flex: 0 0 100%;             /* One card per row */
+    width: 85vw;                /* Card fills most of the screen width */
+    max-width: 400px;           /* Optional: limit max card width */
+    min-width: 200px;
+    height: 290px;              /* Keep card height consistent */
+    margin: 0;
+    padding: 15px;
+  }
+  .timeline-card img {
+    height: 160px;
+    margin-bottom: 15px;
+  }
+  header {
+    padding: 30px 20px;
+  }
+  header h1 {
+    font-size: 2.5em;
+    margin: 15px 0 30px 0;
+  }
+  header img {
+    width: 60px;
+  }
+
+  form {
+  margin: 20px 0;
+  padding: 10px 60px;
+  } 
+}
+
