@@ -48,7 +48,7 @@ header img {
   padding: 20px;
   box-sizing: border-box;
   margin: 0;
-  text-align: left;
+  text-align: center;
   opacity: 0; /* Hide by default */
   transition: opacity 0.3s;
 }
@@ -211,7 +211,7 @@ form label {
 /* Make checkbox bigger */
 .subscription-form .form-check-input {
   transform: scale(1.7);   /* 1.5 times bigger than normal */
-  margin-right: 10px;      /* keep space between checkbox and label */
+  padding: 10px;      /* keep space between checkbox and label */
 }
 
 /* Make label text smaller */
@@ -219,6 +219,7 @@ form label {
   font-size: 0.8em;        /* smaller text */
   font-weight: normal;
 }
+
 
 .subscription-form button {
   background-color: #4a81e6;
@@ -316,4 +317,7 @@ form label {
   padding: 10px 60px;
   } 
 }
+
+
+
 
